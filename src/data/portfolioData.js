@@ -54,7 +54,7 @@ export const skills = [
     id: 3,
     name: "JavaScript",
     icon: "FaJs",
-    percentage: 88,
+    percentage: 50,
     color: "#F0DB4F",
     category: "Frontend"
   },
@@ -62,31 +62,31 @@ export const skills = [
     id: 4,
     name: "React JS",
     icon: "FaReact",
-    percentage: 85,
+    percentage: 30,
     color: "#61DAFB",
     category: "Frontend"
   },
   {
     id: 5,
-    name: "Node.js",
-    icon: "FaNodeJs",
-    percentage: 78,
-    color: "#339933",
+    name: "Python",
+    icon: "FaPython",
+    percentage: 65,
+    color: "#4479A1",
     category: "Backend"
   },
   {
     id: 6,
-    name: "MySQL",
-    icon: "FaDatabase",
-    percentage: 75,
-    color: "#4479A1",
-    category: "Database"
+    name: "Microsoft Excel",
+    icon: "FaFileExcel",
+    percentage: 60,
+    color: "#34c22a",
+    category: "Office"
   },
   {
     id: 7,
     name: "Git",
     icon: "FaGitAlt",
-    percentage: 85,
+    percentage: 60,
     color: "#F05032",
     category: "Tools"
   },
@@ -94,7 +94,7 @@ export const skills = [
     id: 8,
     name: "Tailwind CSS",
     icon: "SiTailwindcss",
-    percentage: 88,
+    percentage: 30,
     color: "#06B6D4",
     category: "Frontend"
   },

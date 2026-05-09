@@ -6,9 +6,9 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import {
   FaHtml5, FaCss3Alt, FaJs, FaReact,
-  FaNodeJs, FaDatabase, FaGitAlt
+  FaPython, FaGitAlt, FaFileExcel
 } from 'react-icons/fa';
-import { SiTailwindcss } from 'react-icons/si';
+import { SiTailwindcss} from 'react-icons/si';
 import { skills } from '../data/portfolioData';
 
 // Map nama icon ke komponen React Icons
@@ -17,9 +17,9 @@ const iconMap = {
   FaCss3Alt: FaCss3Alt,
   FaJs: FaJs,
   FaReact: FaReact,
-  FaNodeJs: FaNodeJs,
-  FaDatabase: FaDatabase,
-  FaGitAlt: FaGitAlt,
+  FaPython: FaPython,
+  FaGitAlt: FaGitAlt,  
+  FaFileExcel: FaFileExcel,
   SiTailwindcss: SiTailwindcss,
 };
 
