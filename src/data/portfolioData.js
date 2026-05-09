@@ -106,7 +106,7 @@ export const projects = [
     id: 1,
     title: "E-Commerce Platform",
     description: "Platform belanja online modern dengan fitur cart, payment gateway, dan dashboard admin yang komprehensif.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80",
+    image: "/src/assets/guru_kita.png",
     tags: ["React", "Node.js", "MySQL", "Stripe"],
     demo: "https://demo.example.com",
     github: "https://github.com/example/ecommerce",
