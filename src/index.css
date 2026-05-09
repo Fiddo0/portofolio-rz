@@ -1,0 +1,364 @@
+/* ==========================================
+   GLOBAL STYLES - index.css
+   Style global untuk seluruh aplikasi
+   ========================================== */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap');
+
+/* ---- CSS Variables ---- */
+:root {
+  --color-dark-100: #2c2c2c;
+  --color-dark-200: #1f1f1f;
+  --color-dark-300: #141414;
+  --color-silver-100: #f5f5f5;
+  --color-silver-200: #e8e8e8;
+  --color-silver-300: #c0c0c0;
+  --color-silver-400: #a0a0a0;
+  --color-accent: #c0c0c0;
+  --color-glow: rgba(192, 192, 192, 0.3);
+  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-silver: 0 0 30px rgba(192, 192, 192, 0.15);
+}
+
+/* ---- Base Reset ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  color: #1f1f1f;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background-color: #141414;
+  color: #f5f5f5;
+}
+
+/* ---- Custom Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1f1f1f;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c0c0c0, #a0a0a0);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c0c0c0;
+}
+
+/* ---- Selection Style ---- */
+::selection {
+  background: rgba(192, 192, 192, 0.3);
+  color: #1f1f1f;
+}
+
+/* ---- Noise Texture Overlay ---- */
+.noise-texture::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+/* ---- Glass Effect ---- */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass {
+  background: rgba(44, 44, 44, 0.4);
+  border: 1px solid rgba(192, 192, 192, 0.08);
+}
+
+/* ---- Gradient Text ---- */
+.gradient-text {
+  background: linear-gradient(135deg, #c0c0c0 0%, #ffffff 50%, #a0a0a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---- Cursor Glow ---- */
+.cursor-glow {
+  width: 20px;
+  height: 20px;
+  background: rgba(192, 192, 192, 0.8);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  transition: all 0.1s ease;
+  mix-blend-mode: difference;
+}
+
+.cursor-glow-outer {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(192, 192, 192, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  transition: all 0.15s ease;
+}
+
+/* ---- Section Spacing ---- */
+.section-padding {
+  padding: 100px 0;
+}
+
+/* ---- Animated Gradient Background ---- */
+.animated-gradient {
+  background: linear-gradient(-45deg, #1f1f1f, #2c2c2c, #1a1a1a, #252525);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---- Float Animation ---- */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ---- Glow Pulse ---- */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(192, 192, 192, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(192, 192, 192, 0.5), 0 0 80px rgba(192, 192, 192, 0.1); }
+}
+
+.glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* ---- Typing Cursor ---- */
+.typing-cursor::after {
+  content: '|';
+  animation: blink 0.7s step-end infinite;
+  color: #c0c0c0;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ---- Progress Bar ---- */
+.progress-bar {
+  height: 4px;
+  border-radius: 100px;
+  background: linear-gradient(90deg, #c0c0c0, #f5f5f5);
+  box-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* ---- Card Hover Effect ---- */
+.card-hover {
+  transition: var(--transition-base);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), var(--shadow-silver);
+}
+
+/* ---- Button Styles ---- */
+.btn-primary {
+  background: linear-gradient(135deg, #2c2c2c, #1f1f1f);
+  color: #f5f5f5;
+  border: 1px solid rgba(192, 192, 192, 0.3);
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  border-color: rgba(192, 192, 192, 0.6);
+  box-shadow: 0 0 30px rgba(192, 192, 192, 0.2);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #1f1f1f;
+  border: 1px solid rgba(31, 31, 31, 0.4);
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: var(--transition-base);
+}
+
+.dark .btn-outline {
+  color: #f5f5f5;
+  border-color: rgba(245, 245, 245, 0.3);
+}
+
+.btn-outline:hover {
+  background: rgba(31, 31, 31, 0.05);
+  border-color: rgba(31, 31, 31, 0.8);
+}
+
+.dark .btn-outline:hover {
+  background: rgba(245, 245, 245, 0.05);
+  border-color: rgba(192, 192, 192, 0.6);
+}
+
+/* ---- Input Styles ---- */
+.input-field {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 14px 20px;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  transition: var(--transition-base);
+  outline: none;
+  color: #1f1f1f;
+}
+
+.dark .input-field {
+  background: rgba(44, 44, 44, 0.8);
+  border-color: rgba(192, 192, 192, 0.1);
+  color: #f5f5f5;
+}
+
+.input-field:focus {
+  border-color: #c0c0c0;
+  box-shadow: 0 0 0 3px rgba(192, 192, 192, 0.15);
+}
+
+.input-field::placeholder {
+  color: #a0a0a0;
+}
+
+/* ---- Section Title ---- */
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.section-subtitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c0c0c0;
+}
+
+/* ---- Loading Screen ---- */
+.loading-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #141414;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---- Scroll to Top ---- */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2c2c2c, #1f1f1f);
+  border: 1px solid rgba(192, 192, 192, 0.3);
+  color: #c0c0c0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  transition: var(--transition-base);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-top-btn:hover {
+  box-shadow: 0 0 20px rgba(192, 192, 192, 0.3);
+  border-color: rgba(192, 192, 192, 0.6);
+  transform: translateY(-3px);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 70px 0;
+  }
+}
