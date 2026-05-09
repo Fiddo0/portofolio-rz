@@ -17,10 +17,10 @@ export const personalInfo = {
   
   // Sosial Media
   social: {
-    github: "https://github.com/aryapratama",
-    linkedin: "https://linkedin.com/in/aryapratama",
-    instagram: "https://instagram.com/aryapratama",
-    tiktok: "https://tiktok.com/@aryapratama",
+    github: "https://github.com/Fiddo0",
+    linkedin: "https://www.linkedin.com/in/raza-haan-fiddo-baab22293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    instagram: "https://www.instagram.com/razaayst?igsh=MWR3cmFlNjVpdHB3Zw==",
+    tiktok: "",
   }
 };
 
