@@ -203,7 +203,7 @@ const Hero = () => {
               {/* Photo circle */}
               <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-silver-300/30 shadow-2xl glow-pulse">
                 <img
-                  src="/src/assets/profile.jpeg"
+                  src="/profile.jpeg"
                   alt={personalInfo.name}
                   className="w-full h-full object-cover"
                 />
