@@ -154,7 +154,7 @@ export const projects = [
   },
   {
     id: 6,
-    title: "PromtUMKM Website",
+    title: "PromptUMKM Website",
     description: "Ubah cerita produk UMKM jadi prompt visual yang menarik dan efektif untuk meningkatkan penjualan.",
     image: "/PromptUMKM.png",
     tags: ["React", "Node.js", "MongoDB"],
