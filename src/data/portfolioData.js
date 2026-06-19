@@ -154,9 +154,9 @@ export const projects = [
   },
   {
     id: 6,
-    title: "Complaint Management System",
-    description: "Platform untuk mengelola keluhan pelanggan secara efisien dan cepat.",
-    image: "/cooming-soon.jpg",
+    title: "PromtUMKM Website",
+    description: "Ubah cerita produk UMKM jadi prompt visual yang menarik dan efektif untuk meningkatkan penjualan.",
+    image: "/PromptUMKM.png",
     tags: ["React", "Node.js", "MongoDB"],
     demo: "https://demo.example.com",
     github: "https://github.com/example/lms",
